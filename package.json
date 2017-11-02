@@ -11,8 +11,9 @@
     "request": "^2.51.0"
   },
   "dependencies": {
-    "async": "^2.5.0",
-    "express": "^4.16.2",
+    "async": "^2.1.5",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
     "iconv-lite": "^0.4.19"
   }
 }

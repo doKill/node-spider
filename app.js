@@ -1,7 +1,9 @@
-var express = require("express"),
-    app = express();
+const express = require('express');
+const app = express();
+const router = express.Router();
 
-app.all('*', function (req, res, next) {
+
+app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
@@ -9,11 +11,12 @@ app.all('*', function (req, res, next) {
     next();
 });
 
-// 路由
-app.use("/dailyPaperIndex", require("./routes/daily-paper-list/index.js"));
+app.use("/",require("./index"));
 
-// app.use(router)
+// 路由
+app.use("/dailyPaperIndex", require("./routes/daily-paper-list/index"));
+
+app.use(router);
 app.listen(3000, function () {
-    console.log("走你~");
+    console.log("走你~3000");
 });
-// module.exports = router;
