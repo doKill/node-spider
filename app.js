@@ -13,7 +13,9 @@ app.all('*', function(req, res, next) {
 
 
 app.use('/', require('./index'));
-app.use('/juejin',require('./routes/juejin'));
+app.use('/juejin',require('./routes/juejin/list.js'));
+app.use('/zhihu_vue_hot',require('./routes/zhihu-vue-hot/list.js'));
+
 
 
 app.use(router);

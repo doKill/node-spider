@@ -12,7 +12,7 @@ app.set('views', './views'); //设置模板路径
 app.get('/', function(req, res) {
     res.header("Content-Type:text/html; charset=utf-8");
     res.render('index', {
-        title: '欢迎进入IT开发者--Nodejs云服务平台'
+        title: '小伙~你终于还是来了'
     });
 
 });
