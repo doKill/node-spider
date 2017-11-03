@@ -11,12 +11,12 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-app.use("/",require("./index"));
 
-// 路由
-app.use("/dailyPaperIndex", require("./routes/daily-paper-list/index"));
+app.use('/', require('./index'));
+app.use('/juejin',require('./routes/juejin'));
+
 
 app.use(router);
-app.listen(3000, function () {
-    console.log("走你~3000");
+app.listen(3000,function (req,res) {
+    console.log("listening at port 3000~");
 });
