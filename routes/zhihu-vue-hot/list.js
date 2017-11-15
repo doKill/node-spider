@@ -1,8 +1,7 @@
-const express = require('express');
-const cheerio = require("cheerio");
-const app     = express();
-const request = require("request");
-const Iconv   = require('iconv-lite');
+let app = require('express')(),
+    cheerio = require("cheerio"),
+    request = require("request"),
+    Iconv = require('iconv-lite');
 
 
 
@@ -25,7 +24,7 @@ function list(req, res) {
             var body = Iconv.decode(body, 'utf-8');
             $ = cheerio.load(body);
             $('.feed-item').each(function () {
-                var title = $(this).find('a.question_link').text().trim().replace(/^\n+|\n+$/g,""),
+                var title = $(this).find('a.question_link').text().trim().replace(/^\n+|\n+$/g, ""),
                     vote = $(this).find('a.zm-item-vote-count').text().trim(),
                     author = $(this).find('.author-link').text().trim(),
                     href = $(this).find('a.question_link').attr('href').trim();

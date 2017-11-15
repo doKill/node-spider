@@ -14,7 +14,10 @@ app.all('*', function(req, res, next) {
 
 app.use('/', require('./index'));
 app.use('/juejin',require('./routes/juejin/list.js'));
-app.use('/zhihu_vue_hot',require('./routes/zhihu-vue-hot/list.js'));
+app.use('/zhihu_vue_hot', require('./routes/zhihu-vue-hot/list.js'));
+
+app.use('/zhihu_daily', require('./routes/zhihu-daily/zhihu_daily.js'));
+app.use('/zhihu_daily_detail', require('./routes/zhihu-daily/detail.js'));
 
 
 
