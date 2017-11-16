@@ -23,6 +23,8 @@ app.use('/toutiao_news_list', require('./routes/news/news_list.js'));
 app.use('/toutiao_news_detail', require('./routes/news/news_detail.js'));
 app.use('/news_video_list', require('./routes/news/video_list.js'));
 
+app.use('/joke', require('./routes/joke/joke.js'));
+app.use('/joke_pic', require('./routes/joke/joke_pic.js'));
 
 
 app.use(router);
