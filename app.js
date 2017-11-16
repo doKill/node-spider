@@ -19,6 +19,10 @@ app.use('/zhihu_vue_hot', require('./routes/zhihu-vue-hot/list.js'));
 app.use('/zhihu_daily', require('./routes/zhihu-daily/zhihu_daily.js'));
 app.use('/zhihu_daily_detail', require('./routes/zhihu-daily/detail.js'));
 
+app.use('/toutiao_news_list', require('./routes/news/news_list.js'));
+app.use('/toutiao_news_detail', require('./routes/news/news_detail.js'));
+app.use('/news_video_list', require('./routes/news/video_list.js'));
+
 
 
 app.use(router);
