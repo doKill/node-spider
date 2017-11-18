@@ -19,32 +19,34 @@ let fetch = (req, res) => {
         encoding: null,
         headers: headers
     }, (err, response, body) => {
-        if (!err && response && response.statusCode == 200) {
+        if (response && response.statusCode == 200) {
             body = Iconv.decode(body, 'utf-8');
             $ = cheerio.load(body);
-            
-            let result = [];
-            $('.item').each(() => {
-                let title = $(this).find('.text-ellipsis').text(),
-                    url = "http://www.oschina.net" + $(this).find('.title').attr('href') || "",
-                    text = $(this).find('.summary').text(),
-                    author = $(this).find('.mr a').text();
+            let link = [];
+            $('.item').each(function () {
+                let title = $(this).find('.title span').text(),
+                    description = $(this).find('.summary').text(),
+                    href = "http://www.oschina.net" + $(this).find('.title').attr('href') || "",
+                    thumb = $(this).find('.small').attr("src") ? "http://www.oschina.net" + $(this).find('.small').attr("src") : "",
+                    date = $(this).find('.mr').eq(0).text().split("于")[1];
+
                 let tmp = {
-                    title:title,
-                    url:url,
-                    text:text,
-                    author:author
+                    title: title,
+                    des:description,
+                    href: href,
+                    thumb: thumb,
+                    date: date
                 };
-                result.push(tmp);
-            })
+                link.push(tmp);
+            });
             res.send({
-                msg:'success',
-                code:1,
-                data:result
-            })
+                msg: "success",
+                data: link,
+                code: 1
+            });
         } else {
             res.send({
-                msg: 'fail',
+                msg: "糟糕!!! 网络好像有点问题",
                 code: 0
             })
             console.log(err)
