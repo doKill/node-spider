@@ -35,6 +35,8 @@ app.use('/huaban_img', require('./routes/beauty/huaban_img.js'));
 app.use('/meizi_list', require('./routes/beauty/meizi_list.js'));
 app.use('/meizi_detail', require('./routes/beauty/meizi_detail.js'));
 
+app.use('/weather', require('./routes/weather/weather.js'));
+
 
 app.use(router);
 app.listen(3000,function (req,res) {

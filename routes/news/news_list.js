@@ -43,6 +43,7 @@ app.get('/', (req, res) => {
             res.send({
                 msg: "success",
                 code: 1,
+                type:type[index],
                 data: JSON.parse(body)
             })
         }).catch(function (err) {
