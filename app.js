@@ -28,6 +28,12 @@ app.use('/joke_pic', require('./routes/joke/joke_pic.js'));
 
 app.use('/os_update', require('./routes/oschina-update/update.js'));
 
+app.use('/random_list', require('./routes/kugou/random_list.js'));
+app.use('/music_detail', require('./routes/kugou/music_detail.js'));
+
+app.use('/huaban_img', require('./routes/beauty/huaban_img.js'));
+app.use('/meizi_list', require('./routes/beauty/meizi_list.js'));
+app.use('/meizi_detail', require('./routes/beauty/meizi_detail.js'));
 
 
 app.use(router);
