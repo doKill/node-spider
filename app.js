@@ -26,6 +26,9 @@ app.use('/news_video_list', require('./routes/news/video_list.js'));
 app.use('/joke', require('./routes/joke/joke.js'));
 app.use('/joke_pic', require('./routes/joke/joke_pic.js'));
 
+app.use('/os_update', require('./routes/oschina-update/update.js'));
+
+
 
 app.use(router);
 app.listen(3000,function (req,res) {
