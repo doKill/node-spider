@@ -5,7 +5,7 @@ const querystring = require("querystring");
 const request = require("request");
 
 
-function httpGet(host, data, path, status) {
+let httpGet = (host, data, path, status) => {
     console.log("===================HttpGet=====================");
     var options = {
         host: host,
@@ -25,11 +25,11 @@ function httpGet(host, data, path, status) {
         options.port = 443
     }
 
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         let body = "";
-        var get_req = http.request(options, function (response) {
+        var get_req = http.request(options, (response) => {
 
-            response.on("data", function (chunk) {
+            response.on("data", (chunk) => {
                 body += chunk;
             })
 
