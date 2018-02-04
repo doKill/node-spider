@@ -17,14 +17,15 @@ let fetch = (req, res) => {
         if (response && response.statusCode == 200) {
             body = Iconv.decode(body, 'gb2312');
             $ = cheerio.load(body);
-            let links = [];
+            let datas = { links :[] };
+            datas.title = $(".metaRight h2 a").text();
             $('#picture img').each(function () {
                 let link = $(this).attr('src');
-                links.push(link);
+                datas.links.push(link);
             });
             res.send({
                 msg: "success",
-                data: links,
+                data: datas,
                 code: 1
             });
         } else {
