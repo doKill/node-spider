@@ -13,7 +13,7 @@ app.all('*', function(req, res, next) {
 
 
 app.use('/', require('./index'));
-app.use('/juejin',require('./routes/juejin/list.js'));
+app.use('/juejin', require('./routes/juejin/list.js'));
 app.use('/zhihu_vue_hot', require('./routes/zhihu-vue-hot/list.js'));
 
 app.use('/zhihu_daily', require('./routes/zhihu-daily/zhihu_daily.js'));
@@ -45,6 +45,6 @@ app.use('/maopu', require('./routes/maopu/maopu.js'));
 
 
 app.use(router);
-app.listen(3000,function (req,res) {
+app.listen(3000, function(req, res) {
     console.log("listening at port 3000~");
 });
