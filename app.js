@@ -44,7 +44,6 @@ app.use('/qilu', require('./routes/qilu/qilu.js'));
 app.use('/maopu', require('./routes/maopu/maopu.js'));
 
 
-app.use(router);
 app.listen(3000, function(req, res) {
     console.log("listening at port 3000~");
 });
