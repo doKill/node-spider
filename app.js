@@ -41,8 +41,6 @@ app.use("/qilu", require("./routes/qilu/qilu.js"));
 //猫扑
 app.use("/maopu", require("./routes/maopu/maopu.js"));
 
-app.use("/daylines/mingyan", require("./routes/dayLines/mingyan.js"));
-
 app.listen(3000, function(req, res) {
   console.log("listening at port 3000~");
 });
